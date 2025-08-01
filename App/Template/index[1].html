@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Medak Court Case Search</title></head>
+<body>
+    <h2>Search Medak Court Case</h2>
+    <form method="POST">
+        Case Type: <input type="text" name="case_type"><br>
+        Case Number: <input type="text" name="case_no"><br>
+        Filing Year: <input type="text" name="case_year"><br>
+        <input type="submit" value="Search">
+    </form>
+    {% if data %}
+    <h3>Case Details:</h3>
+    <p>Parties: {{ data.parties }}</p>
+    <p>Filing Date: {{ data.filing_date }}</p>
+    <p>Next Hearing: {{ data.next_hearing }}</p>
+    <a href="{{ data.latest_pdf }}">Download Latest Order</a>
+    {% endif %}
+    {% if error %}
+    <p style="color:red">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
