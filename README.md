@@ -1,2 +1,0 @@
-# Internship-Assessment
-ok
